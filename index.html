@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jaque Empanadas: Delivery en Florida, Vicente López</title>
+<meta name="description" content="25 años elaborando las mejores empanadas y canastitas de Florida, Vicente López. Delivery en auto sin cargo. Pedidos al 4797-9222.">
+<link rel="canonical" href="https://empanadasjaque.com.ar/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Jaque Empanadas">
+<meta property="og:title" content="Jaque Empanadas: Delivery en Florida, Vicente López">
+<meta property="og:description" content="25 años elaborando las mejores empanadas y canastitas de Florida, Vicente López. Delivery en auto sin cargo.">
+<meta property="og:url" content="https://empanadasjaque.com.ar/">
+<meta property="og:image" content="https://empanadasjaque.com.ar/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#000000">
+
+<link rel="icon" href="assets/img/favicon.png" sizes="any">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/img/hero.jpg" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,700;0,800;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&family=RocknRoll+One&family=Rosarivo:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<script>
+  /* Marca que el JS corre. Los reveals sólo se ocultan si esta clase existe,
+     así que si el script principal falla la página igual se ve completa. */
+  document.documentElement.className += ' js';
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Jaque Empanadas",
+  "description": "Empanadas y comidas regionales en Florida, Vicente López. Elaboración artesanal desde 2001.",
+  "url": "https://empanadasjaque.com.ar/",
+  "image": "https://empanadasjaque.com.ar/assets/img/hero.jpg",
+  "servesCuisine": "Argentina",
+  "priceRange": "$$",
+  "telephone": "+541147979222",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Gdor. Valentín Vergara 1488",
+    "addressLocality": "Vicente López",
+    "addressRegion": "Buenos Aires",
+    "postalCode": "B1638BVP",
+    "addressCountry": "AR"
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "294" },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "19:30", "closes": "22:45"
+  }],
+  "hasMenu": "https://empanadasjaque.com.ar/#menu"
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#nosotros">Saltar al contenido</a>
+
+<header class="site-header" id="header">
+  <div class="header-inner">
+    <a class="brand" href="#inicio" aria-label="Jaque Empanadas — Inicio">
+      <img src="assets/img/logo.png" alt="Jaque Empanadas" width="250" height="92" class="brand-logo">
+      <span class="brand-tagline">Empanadas y Comidas Regionales.</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navegación principal">
+      <ul class="nav-list">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#delivery">Delivery</a></li>
+      </ul>
+
+      <div class="nav-phones">
+        <span class="nav-phones-label">Pedidos</span>
+        <a href="tel:+541147979222">4797-9222</a>
+        <a href="tel:+541177097500">7709-7500</a>
+        <a href="tel:+541147969599">4796-9599</a>
+      </div>
+    </nav>
+
+    <div class="header-actions">
+      <div class="phones" role="group" aria-label="Teléfonos de pedidos">
+        <a href="tel:+541147979222">4797-9222</a><span aria-hidden="true">|</span><a href="tel:+541177097500">7709-7500</a><span aria-hidden="true">|</span><a href="tel:+541147969599">4796-9599</a>
+      </div>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú de navegación">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="scroll-progress" id="progress" aria-hidden="true"></div>
+</header>
+
+<div class="nav-backdrop" id="backdrop" hidden></div>
+
+<main>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero" id="inicio">
+    <div class="hero-media" aria-hidden="true"></div>
+    <div class="hero-body">
+      <p class="hero-status" id="status-hero" hidden>
+        <span class="dot"></span><span class="status-text"></span>
+      </p>
+      <h1 class="hero-title reveal">La calidad y el sabor<br>que usted se merece</h1>
+      <p class="hero-lead reveal" data-delay="1">Elaboramos nuestras empanadas con ingredientes seleccionados, cuidando cada detalle para que disfrutes de una experiencia única.</p>
+      <div class="hero-cta reveal" data-delay="2">
+        <a class="btn btn-primary" href="#menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v2H4zm0 5h16v2H4zm0 5h11v2H4zm0 5h11v2H4z"/></svg>
+          Ver menú
+        </a>
+        <a class="btn btn-ghost" href="tel:+541147979222">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1z"/></svg>
+          Llamar ahora
+        </a>
+      </div>
+    </div>
+    <a class="hero-scroll" href="#nosotros" aria-label="Ir a la siguiente sección">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ═══════════ NOSOTROS ═══════════ -->
+  <section class="about" id="nosotros">
+    <div class="wrap about-grid">
+      <figure class="about-figure reveal">
+        <img src="assets/img/nosotros.jpg" alt="Tabla de madera con empanadas recién horneadas de Jaque" width="1024" height="634" loading="lazy" decoding="async">
+      </figure>
+      <div class="about-text">
+        <p class="eyebrow reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3.3 3.2 5 6.1 5 8.7a5 5 0 0 1-10 0C7 8.1 8.7 5.2 12 2z"/></svg>
+          Nosotros
+        </p>
+        <h2 class="reveal" data-delay="1">25 años de pasión por el sabor en Vicente López</h2>
+        <p class="reveal" data-delay="2">Desde 2001, en Jaque nos dedicamos a ofrecer las mejores empanadas y canastitas, elaboradas con ingredientes frescos y recetas caseras.</p>
+        <p class="reveal" data-delay="3">Nuestra misión es brindarte una experiencia única en cada bocado.</p>
+        <ul class="feature-list reveal" data-delay="4">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3.3 3.2 5 6.1 5 8.7a5 5 0 0 1-10 0C7 8.1 8.7 5.2 12 2z"/></svg>
+            Horneadas en el momento
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11h1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1zm2.1 0h9.8l-1-3H8.1z"/></svg>
+            Delivery en auto sin cargo
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ RESEÑAS ═══════════ -->
+  <section class="reviews" id="resenas" aria-labelledby="reviews-title">
+    <div class="wrap">
+      <div class="reviews-head">
+        <h2 id="reviews-title" class="reveal">Qué dicen nuestros clientes</h2>
+        <div class="reviews-score reveal" data-delay="1">
+          <strong>4,6</strong>
+          <span class="stars" role="img" aria-label="4,6 de 5 estrellas">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+            <svg viewBox="0 0 24 24" class="half" aria-hidden="true"><defs><linearGradient id="halfstar"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="#d9d9d9"/></linearGradient></defs><path fill="url(#halfstar)" d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+          </span>
+          <span class="reviews-count">a base de <strong>294 reseñas</strong> en Google</span>
+        </div>
+      </div>
+
+      <div class="reviews-viewport">
+        <ul class="reviews-track" id="reviews-track">
+          <li class="review-card">
+            <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span>
+            <p>Sin lugar a discusión, el mejor lugar de empanadas de Vicente López, deliciosas TODAS, siempre frescas de ingredientes y en precio. Si todo esto no fuera suficiente, los dueños un amor, una pareja super amable, da gusto comprarles la verdad. Todas las semanas compro y nunca fallan. Recomiendo.</p>
+            <footer><span class="review-author">Valentin Esposito</span><time datetime="2026-01-05">05/01/2026</time></footer>
+          </li>
+          <li class="review-card">
+            <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span>
+            <p>Las mejores empanadas fritas y canastas super originales. Te atienden con mucha amabilidad y despachan rapido. A mi criterio son de los mejores de toda zona norte, ¡Felicitaciones!</p>
+            <footer><span class="review-author">Martin YU</span><time datetime="2025-12-20">20/12/2025</time></footer>
+          </li>
+          <li class="review-card">
+            <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span>
+            <p>De las mejores empanadas que comimos. No llegan a nuestro domicilio porque estamos lejos pero cada semana sin falta las vamos a buscar. ¡Valen la pena! Y la atención siempre de 10.</p>
+            <footer><span class="review-author">Miri Alvarez</span><time datetime="2026-01-17">17/01/2026</time></footer>
+          </li>
+          <li class="review-card">
+            <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span>
+            <p>De las mejores empanadas de la zona, muy ricas y grandes, tienen la opción de cocción fritas o al horno, cosa que no todos los lugares tienen y eso suma un punto. Recomendadas.</p>
+            <footer><span class="review-author">Fernando Garcia</span><time datetime="2025-12-16">16/12/2025</time></footer>
+          </li>
+          <li class="review-card">
+            <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span>
+            <p>Excelente atención, muy amables en tomar el pedido. Las empanadas fritas muy tremendas. ¡Recomendable!</p>
+            <footer><span class="review-author">Gustavo Sabio</span><time datetime="2025-11-06">06/11/2025</time></footer>
+          </li>
+          <li class="review-card">
+            <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span>
+            <p>Las mejores empanadas del planeta tierra.</p>
+            <footer><span class="review-author">Roc Blanco</span><time datetime="2025-11-24">24/11/2025</time></footer>
+          </li>
+          <li class="review-card">
+            <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span>
+            <p>Excelentes empanadas.</p>
+            <footer><span class="review-author">Marina Sabatier</span><time datetime="2025-12-21">21/12/2025</time></footer>
+          </li>
+          <li class="review-card">
+            <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span>
+            <p>Riquísimas siempre.</p>
+            <footer><span class="review-author">Domo Ideas Impresas</span><time datetime="2026-02-24">24/02/2026</time></footer>
+          </li>
+          <li class="review-card">
+            <span class="stars" role="img" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span>
+            <p>Somos fan.</p>
+            <footer><span class="review-author">Andres Soto</span><time datetime="2026-02-21">21/02/2026</time></footer>
+          </li>
+        </ul>
+      </div>
+
+      <div class="reviews-controls">
+        <button class="rev-btn" id="rev-prev" type="button" aria-label="Reseñas anteriores">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 4.6L13.9 3l-9 9 9 9 1.5-1.6-7.4-7.4z"/></svg>
+        </button>
+        <a class="reviews-link" href="https://www.google.com/maps/search/?api=1&query=JAQUE+Casa+de+empanadas+Vicente+Lopez" target="_blank" rel="noopener">Ver todas en Google</a>
+        <button class="rev-btn" id="rev-next" type="button" aria-label="Reseñas siguientes">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 4.6L10.1 3l9 9-9 9-1.5-1.6 7.4-7.4z"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ MENÚ ═══════════ -->
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <h2 class="menu-title reveal">Nuestro menú</h2>
+
+      <div class="menu-toolbar" id="menu-toolbar">
+        <div class="menu-tabs" role="tablist" aria-label="Categorías del menú">
+          <button class="chip is-active" type="button" role="tab" aria-selected="true" data-filter="all">Todo</button>
+          <button class="chip" type="button" role="tab" aria-selected="false" data-filter="empanadas">Empanadas</button>
+          <button class="chip" type="button" role="tab" aria-selected="false" data-filter="canastitas">Canastitas</button>
+        </div>
+        <div class="menu-search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2a8 8 0 1 0 4.9 14.3l5.4 5.4 1.4-1.4-5.4-5.4A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z"/></svg>
+          <label class="visually-hidden" for="menu-q">Buscar un gusto</label>
+          <input type="search" id="menu-q" placeholder="Buscar un gusto…" autocomplete="off">
+          <button type="button" class="search-clear" id="menu-q-clear" aria-label="Borrar búsqueda" hidden>&times;</button>
+        </div>
+      </div>
+      <p class="menu-empty" id="menu-empty" hidden>No encontramos ese gusto. Probá con otra palabra.</p>
+
+      <!-- EMPANADAS -->
+      <div class="menu-group" data-group="empanadas">
+        <header class="menu-group-head">
+          <h3>Empanadas</h3>
+          <p class="script-note">Fritas o al horno</p>
+        </header>
+        <ul class="price-list">
+          <li class="price-item" data-name="carne suave"><span class="ico"></span><span class="pname">Carne suave</span><span class="leader"></span><span class="pprice">$3500</span></li>
+          <li class="price-item" data-name="carne picante"><span class="ico"></span><span class="pname">Carne picante</span><span class="leader"></span><span class="pprice">$3500</span></li>
+          <li class="price-item" data-name="porteña portena"><span class="ico"></span><span class="pname">Porteña</span><span class="leader"></span><span class="pprice">$3500</span></li>
+          <li class="price-item" data-name="jamon y queso jamón"><span class="ico"></span><span class="pname">Jamón y queso</span><span class="leader"></span><span class="pprice">$3500</span></li>
+          <li class="price-item" data-name="roquefort y jamon jamón queso azul"><span class="ico"></span><span class="pname">Roquefort y jamón</span><span class="leader"></span><span class="pprice">$3500</span></li>
+          <li class="price-item" data-name="pollo"><span class="ico"></span><span class="pname">Pollo</span><span class="leader"></span><span class="pprice">$3500</span></li>
+          <li class="price-item" data-name="atun atún"><span class="ico"></span><span class="pname">Atún</span><span class="leader"></span><span class="pprice">$3500</span></li>
+          <li class="price-item" data-name="humita choclo"><span class="ico"></span><span class="pname">Humita</span><span class="leader"></span><span class="pprice">$3500</span></li>
+          <li class="price-item" data-name="verdura acelga"><span class="ico"></span><span class="pname">Verdura</span><span class="leader"></span><span class="pprice">$3500</span></li>
+        </ul>
+      </div>
+
+      <!-- CANASTITAS -->
+      <div class="menu-group" data-group="canastitas">
+        <header class="menu-group-head">
+          <h3>Canastitas</h3>
+          <p class="script-note">Todas con base de mozzarella</p>
+        </header>
+        <ul class="price-list">
+          <li class="price-item" data-name="capresse caprese tomate cherry albahaca"><span class="ico"></span><span class="pname">Capresse<em>Tomate cherry, albahaca</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item" data-name="americana huevo panceta papas pay"><span class="ico"></span><span class="pname">Americana<em>Huevo, panceta, papas pay</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item" data-name="pollo al verdeo crema"><span class="ico"></span><span class="pname">Pollo al verdeo<em>Pollo, crema de verdeo</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item" data-name="portobello hongos provenzal"><span class="ico"></span><span class="pname">Portobello<em>Hongos portobello a la provenzal</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item" data-name="panceta y ciruelas"><span class="ico"></span><span class="pname">Panceta y ciruelas<em>Panceta y ciruelas</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item" data-name="roque miel y nuez queso azul nueces roquefort"><span class="ico"></span><span class="pname">Roque, miel y nuez<em>Queso azul, miel y nueces</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item" data-name="francesa jamon cocido salsa blanca gruyere"><span class="ico"></span><span class="pname">Francesa<em>Jamón cocido, salsa blanca y queso gruyere</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item" data-name="fugazza cebolla aceite de oliva oregano orégano"><span class="ico"></span><span class="pname">Fugazza<em>Cebolla, aceite de oliva, orégano</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item" data-name="española espanola jamon crudo tomates secos ajos asados"><span class="ico"></span><span class="pname">Española<em>Jamón crudo, tomates secos y ajos asados</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item" data-name="provolone en dados"><span class="ico"></span><span class="pname">Provolone<em>Provolone en dados</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item" data-name="provolone con jamon jamón cocido"><span class="ico"></span><span class="pname">Provolone con jamón<em>Jamón cocido y provolone en dados</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item" data-name="jamon y palmitos jamón salsa golf"><span class="ico"></span><span class="pname">Jamón y palmitos<em>Jamón cocido, palmitos y salsa golf</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item" data-name="jamon y anana jamón ananá azucar negra"><span class="ico"></span><span class="pname">Jamón y ananá<em>Jamón cocido, ananá y azúcar negra</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item" data-name="italiana mortadela pistachos bocatti stracciatella albahaca"><span class="ico"></span><span class="pname">Italiana<em>Mortadela con pistachos “Bocatti”, stracciatella y albahaca</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item" data-name="bondiola cerdo barbacoa cheddar pepinos agridulces"><span class="ico"></span><span class="pname">Bondiola<em>Bondiola de cerdo, barbacoa, queso cheddar y pepinos agridulces</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item" data-name="espinaca y queso brie blanqueada"><span class="ico"></span><span class="pname">Espinaca y queso brie<em>Espinaca blanqueada y queso brie</em></span><span class="leader"></span><span class="pprice">$3600</span></li>
+          <li class="price-item" data-name="brocoli brócoli salsa blanca"><span class="ico"></span><span class="pname">Brócoli<em>Brócoli con salsa blanca</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item is-new" data-name="esparragos espárragos queso reggianito"><span class="ico"></span><span class="pname">Espárragos <b class="tag">nueva</b><em>Espárragos con queso reggianito</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+          <li class="price-item is-new" data-name="repollitos de bruselas queso parmesano"><span class="ico"></span><span class="pname">Repollitos de Bruselas <b class="tag">nueva</b><em>Repollitos de bruselas y queso parmesano</em></span><span class="leader"></span><span class="pprice">$3700</span></li>
+        </ul>
+      </div>
+
+      <p class="menu-extra">Probá también nuestros <span class="script-note">tamales y humitas en chala</span></p>
+    </div>
+  </section>
+
+  <!-- ═══════════ UBICACIÓN ═══════════ -->
+  <section class="location" id="ubicacion">
+    <div class="wrap location-head">
+      <h2 class="reveal">Ubicación</h2>
+      <p class="reveal" data-delay="1">Estamos en <strong>Gdor. Valentín Vergara 1488</strong>, Vicente López — a metros de Av. Maipú.</p>
+      <div class="location-actions reveal" data-delay="2">
+        <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&destination=Gdor.+Valent%C3%ADn+Vergara+1488%2C+Vicente+L%C3%B3pez%2C+Buenos+Aires" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          Cómo llegar
+        </a>
+        <a class="btn btn-outline" href="tel:+541147979222">Llamar al local</a>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <iframe
+        title="Mapa: Gdor. Valentín Vergara 1488, Vicente López"
+        src="https://maps.google.com/maps?q=B1638BVP%2C%20Gdor.%20Valent%C3%ADn%20Vergara%201488%2C%20Vicente%20L%C3%B3pez%2C%20Provincia%20de%20Buenos%20Aires&t=m&z=15&output=embed&iwloc=near"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <!-- ═══════════ DELIVERY ═══════════ -->
+  <section class="delivery" id="delivery">
+    <div class="wrap">
+      <div class="delivery-head">
+        <h2 class="reveal">Delivery</h2>
+        <p class="reveal" data-delay="1">Trabajamos en la zona de Vicente López, llevamos el sabor directo a tu puerta.</p>
+        <p class="delivery-badge reveal" data-delay="2">Envíos en auto <mark>sin cargo</mark></p>
+      </div>
+
+      <div class="delivery-grid">
+        <figure class="delivery-figure reveal">
+          <img src="assets/img/delivery.jpg" alt="Empanadas de carne cortadas al medio sobre tabla de madera" width="1024" height="683" loading="lazy" decoding="async">
+        </figure>
+
+        <div class="hours">
+          <p class="hours-status" id="status-hours"><span class="dot"></span><span class="status-text">Consultá nuestros horarios</span></p>
+          <ul class="hours-list">
+            <li data-day="1" class="is-closed"><span class="hicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></span><div><h3>Lunes</h3><p>Cerrado</p></div></li>
+            <li data-day="2" class="is-closed"><span class="hicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></span><div><h3>Martes</h3><p>Cerrado</p></div></li>
+            <li data-day="3"><span class="hicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></span><div><h3>Miércoles</h3><p>19:30 a 22:45 hs</p></div></li>
+            <li data-day="4"><span class="hicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></span><div><h3>Jueves</h3><p>19:30 a 22:45 hs</p></div></li>
+            <li data-day="5"><span class="hicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></span><div><h3>Viernes</h3><p>19:30 a 22:45 hs</p></div></li>
+            <li data-day="6"><span class="hicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></span><div><h3>Sábado</h3><p>19:30 a 22:45 hs</p></div></li>
+            <li data-day="0"><span class="hicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></span><div><h3>Domingo</h3><p>19:30 a 22:45 hs</p></div></li>
+          </ul>
+          <div class="hours-cta">
+            <a class="btn btn-primary" href="tel:+541147979222">Pedir al 4797-9222</a>
+            <p class="hours-alt">También <a href="tel:+541177097500">7709-7500</a> y <a href="tel:+541147969599">4796-9599</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img src="assets/img/logo.png" alt="Jaque Empanadas" width="250" height="92" loading="lazy" class="footer-logo">
+    <p class="footer-address">Gdor. Valentín Vergara 1488, Vicente López · Buenos Aires</p>
+    <p class="footer-phones">
+      <a href="tel:+541147979222">4797-9222</a> ·
+      <a href="tel:+541177097500">7709-7500</a> ·
+      <a href="tel:+541147969599">4796-9599</a>
+    </p>
+    <p class="footer-copy">© <span id="year">2026</span> Jaque Empanadas — Empanadas y Comidas Regionales.</p>
+    <p class="footer-credit">Desarrollado por <a href="https://lautaromendez.com.ar" target="_blank" rel="noopener">Lautaro Mendez</a></p>
+  </div>
+</footer>
+
+<!-- Barra fija de acciones — sólo mobile -->
+<div class="action-bar" id="action-bar">
+  <a class="ab-item" href="tel:+541147979222">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1z"/></svg>
+    Llamar
+  </a>
+  <a class="ab-item ab-primary" href="#menu">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v2H4zm0 5h16v2H4zm0 5h11v2H4zm0 5h11v2H4z"/></svg>
+    Ver menú
+  </a>
+  <a class="ab-item" href="#ubicacion">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+    Llegar
+  </a>
+</div>
+
+<button class="to-top" id="to-top" type="button" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l8 8-1.6 1.6L13 8.2V20h-2V8.2l-5.4 5.4L4 12z"/></svg>
+</button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
