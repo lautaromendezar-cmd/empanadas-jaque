@@ -1,0 +1,218 @@
+{
+  "_comentario": "Fuente de verdad de los precios. Lo edita el panel /admin, que después regenera el bloque del menú dentro de index.html. No editar el HTML a mano.",
+  "actualizado": "2026-08-16",
+  "grupos": [
+    {
+      "id": "empanadas",
+      "titulo": "Empanadas",
+      "subtitulo": "Fritas o al horno",
+      "items": [
+        {
+          "id": "carne-suave",
+          "nombre": "Carne suave",
+          "desc": null,
+          "precio": 3500,
+          "buscar": "carne suave"
+        },
+        {
+          "id": "carne-picante",
+          "nombre": "Carne picante",
+          "desc": null,
+          "precio": 3500,
+          "buscar": "carne picante"
+        },
+        {
+          "id": "portena",
+          "nombre": "Porteña",
+          "desc": null,
+          "precio": 3500,
+          "buscar": "porteña portena"
+        },
+        {
+          "id": "jamon-y-queso",
+          "nombre": "Jamón y queso",
+          "desc": null,
+          "precio": 3500,
+          "buscar": "jamon y queso jamón"
+        },
+        {
+          "id": "roquefort-y-jamon",
+          "nombre": "Roquefort y jamón",
+          "desc": null,
+          "precio": 3500,
+          "buscar": "roquefort y jamon jamón queso azul"
+        },
+        {
+          "id": "pollo",
+          "nombre": "Pollo",
+          "desc": null,
+          "precio": 3500,
+          "buscar": "pollo"
+        },
+        {
+          "id": "atun",
+          "nombre": "Atún",
+          "desc": null,
+          "precio": 3500,
+          "buscar": "atun atún"
+        },
+        {
+          "id": "humita",
+          "nombre": "Humita",
+          "desc": null,
+          "precio": 3500,
+          "buscar": "humita choclo"
+        },
+        {
+          "id": "verdura",
+          "nombre": "Verdura",
+          "desc": null,
+          "precio": 3500,
+          "buscar": "verdura acelga"
+        }
+      ]
+    },
+    {
+      "id": "canastitas",
+      "titulo": "Canastitas",
+      "subtitulo": "Todas con base de mozzarella",
+      "items": [
+        {
+          "id": "capresse",
+          "nombre": "Capresse",
+          "desc": "Tomate cherry, albahaca",
+          "precio": 3700,
+          "buscar": "capresse caprese tomate cherry albahaca"
+        },
+        {
+          "id": "americana",
+          "nombre": "Americana",
+          "desc": "Huevo, panceta, papas pay",
+          "precio": 3700,
+          "buscar": "americana huevo panceta papas pay"
+        },
+        {
+          "id": "pollo-al-verdeo",
+          "nombre": "Pollo al verdeo",
+          "desc": "Pollo, crema de verdeo",
+          "precio": 3700,
+          "buscar": "pollo al verdeo crema"
+        },
+        {
+          "id": "portobello",
+          "nombre": "Portobello",
+          "desc": "Hongos portobello a la provenzal",
+          "precio": 3700,
+          "buscar": "portobello hongos provenzal"
+        },
+        {
+          "id": "panceta-y-ciruelas",
+          "nombre": "Panceta y ciruelas",
+          "desc": "Panceta y ciruelas",
+          "precio": 3700,
+          "buscar": "panceta y ciruelas"
+        },
+        {
+          "id": "roque-miel-y-nuez",
+          "nombre": "Roque, miel y nuez",
+          "desc": "Queso azul, miel y nueces",
+          "precio": 3700,
+          "buscar": "roque miel y nuez queso azul nueces roquefort"
+        },
+        {
+          "id": "francesa",
+          "nombre": "Francesa",
+          "desc": "Jamón cocido, salsa blanca y queso gruyere",
+          "precio": 3700,
+          "buscar": "francesa jamon cocido salsa blanca gruyere"
+        },
+        {
+          "id": "fugazza",
+          "nombre": "Fugazza",
+          "desc": "Cebolla, aceite de oliva, orégano",
+          "precio": 3700,
+          "buscar": "fugazza cebolla aceite de oliva oregano orégano"
+        },
+        {
+          "id": "espanola",
+          "nombre": "Española",
+          "desc": "Jamón crudo, tomates secos y ajos asados",
+          "precio": 3700,
+          "buscar": "española espanola jamon crudo tomates secos ajos asados"
+        },
+        {
+          "id": "provolone",
+          "nombre": "Provolone",
+          "desc": "Provolone en dados",
+          "precio": 3700,
+          "buscar": "provolone en dados"
+        },
+        {
+          "id": "provolone-con-jamon",
+          "nombre": "Provolone con jamón",
+          "desc": "Jamón cocido y provolone en dados",
+          "precio": 3700,
+          "buscar": "provolone con jamon jamón cocido"
+        },
+        {
+          "id": "jamon-y-palmitos",
+          "nombre": "Jamón y palmitos",
+          "desc": "Jamón cocido, palmitos y salsa golf",
+          "precio": 3700,
+          "buscar": "jamon y palmitos jamón salsa golf"
+        },
+        {
+          "id": "jamon-y-anana",
+          "nombre": "Jamón y ananá",
+          "desc": "Jamón cocido, ananá y azúcar negra",
+          "precio": 3700,
+          "buscar": "jamon y anana jamón ananá azucar negra"
+        },
+        {
+          "id": "italiana",
+          "nombre": "Italiana",
+          "desc": "Mortadela con pistachos “Bocatti”, stracciatella y albahaca",
+          "precio": 3700,
+          "buscar": "italiana mortadela pistachos bocatti stracciatella albahaca"
+        },
+        {
+          "id": "bondiola",
+          "nombre": "Bondiola",
+          "desc": "Bondiola de cerdo, barbacoa, queso cheddar y pepinos agridulces",
+          "precio": 3700,
+          "buscar": "bondiola cerdo barbacoa cheddar pepinos agridulces"
+        },
+        {
+          "id": "espinaca-y-queso-brie",
+          "nombre": "Espinaca y queso brie",
+          "desc": "Espinaca blanqueada y queso brie",
+          "precio": 3600,
+          "buscar": "espinaca y queso brie blanqueada"
+        },
+        {
+          "id": "brocoli",
+          "nombre": "Brócoli",
+          "desc": "Brócoli con salsa blanca",
+          "precio": 3700,
+          "buscar": "brocoli brócoli salsa blanca"
+        },
+        {
+          "id": "esparragos",
+          "nombre": "Espárragos",
+          "desc": "Espárragos con queso reggianito",
+          "precio": 3700,
+          "buscar": "esparragos espárragos queso reggianito",
+          "nueva": true
+        },
+        {
+          "id": "repollitos-de-bruselas",
+          "nombre": "Repollitos de Bruselas",
+          "desc": "Repollitos de bruselas y queso parmesano",
+          "precio": 3700,
+          "buscar": "repollitos de bruselas queso parmesano",
+          "nueva": true
+        }
+      ]
+    }
+  ]
+}

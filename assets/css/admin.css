@@ -1,0 +1,191 @@
+/* Panel de precios. Herramienta interna: prioridad a que se use bien desde el
+   celular, con la identidad del sitio pero sin adornos. */
+
+:root {
+  --negro: #0d0d0d;
+  --negro-2: #161616;
+  --negro-3: #1f1f1f;
+  --borde: #2e2e2e;
+  --amarillo: #ffdf00;
+  --texto: #f2f2f2;
+  --gris: #9a9a9a;
+  --rojo: #ff6b5e;
+  --verde: #5ed37a;
+  --radio: 12px;
+  --alto-toque: 48px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--negro);
+  color: var(--texto);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding-bottom: 140px; /* deja lugar a la barra de guardado */
+}
+
+h1 { font-size: 1.4rem; margin: 0 0 6px; }
+h2 { font-size: 1rem; margin: 0 0 4px; }
+h3 { font-size: .95rem; margin: 0; }
+
+.saltar {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--amarillo); color: #000; padding: 12px 16px; z-index: 100;
+}
+.saltar:focus { left: 0; }
+
+:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 2px; }
+
+/* --- barra superior --- */
+.barra {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px;
+  background: #000;
+  border-bottom: 1px solid var(--borde);
+  position: sticky; top: 0; z-index: 20;
+}
+.barra-logo { height: 30px; width: auto; }
+.barra-titulo {
+  font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gris);
+  border-left: 1px solid var(--borde); padding-left: 12px;
+}
+.barra #salir { margin-left: auto; }
+
+main { max-width: 720px; margin: 0 auto; padding: 20px 16px 0; }
+
+.ayuda { color: var(--gris); font-size: .88rem; margin: 0 0 14px; }
+
+.tarjeta {
+  background: var(--negro-2);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 20px 18px;
+  margin-bottom: 18px;
+}
+
+.encabezado { margin-bottom: 18px; }
+
+/* --- formularios --- */
+label {
+  display: block;
+  font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--gris); margin-bottom: 6px;
+}
+
+input[type="password"], input[type="number"], select {
+  width: 100%;
+  min-height: var(--alto-toque);
+  background: var(--negro-3);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  color: var(--texto);
+  font-size: 1rem;
+  padding: 10px 12px;
+  font-family: inherit;
+}
+input:focus, select:focus { border-color: var(--amarillo); }
+
+/* Los spinners del input number son diminutos en el celular y se tocan sin querer */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input[type="number"] { -moz-appearance: textfield; }
+
+.boton {
+  display: block; width: 100%;
+  min-height: var(--alto-toque);
+  margin-top: 16px;
+  background: var(--amarillo); color: #000;
+  border: 0; border-radius: 10px;
+  font: 700 .95rem/1 system-ui, sans-serif;
+  letter-spacing: .06em; text-transform: uppercase;
+  cursor: pointer;
+}
+.boton:hover { filter: brightness(1.08); }
+.boton:disabled { opacity: .4; cursor: not-allowed; filter: none; }
+.boton.secundario { background: transparent; color: var(--amarillo); border: 1px solid var(--amarillo); }
+
+.boton-texto {
+  background: none; border: 0; color: var(--gris);
+  font-size: .85rem; text-decoration: underline; cursor: pointer;
+  min-height: 44px; padding: 0 4px;
+}
+.boton-texto:hover { color: var(--texto); }
+
+.aviso {
+  margin-top: 14px; padding: 12px 14px; border-radius: 10px;
+  background: rgba(255, 107, 94, .12); border: 1px solid rgba(255, 107, 94, .4);
+  color: var(--rojo); font-size: .9rem;
+}
+.aviso.ok {
+  background: rgba(94, 211, 122, .12); border-color: rgba(94, 211, 122, .4); color: var(--verde);
+}
+
+/* --- herramientas de porcentaje --- */
+.fila-herramientas { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+.campo-porcentaje:last-child { grid-column: 1 / -1; }
+.con-sufijo { position: relative; }
+.con-sufijo span {
+  position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+  color: var(--gris); pointer-events: none;
+}
+.con-sufijo input { padding-right: 34px; }
+
+/* --- listado de precios --- */
+.grupo { margin-bottom: 22px; }
+.grupo-titulo {
+  display: flex; align-items: baseline; justify-content: space-between;
+  padding: 0 4px 10px;
+  border-bottom: 1px solid var(--borde); margin-bottom: 4px;
+}
+.grupo-titulo span { font-size: .78rem; color: var(--gris); }
+
+.item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 10px 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+.item-nombre { flex: 1; min-width: 0; }
+.item-nombre strong { display: block; font-weight: 600; font-size: .98rem; }
+.item-nombre em { display: block; font-style: normal; color: var(--gris); font-size: .8rem; margin-top: 2px; }
+
+.item-precio { position: relative; flex: 0 0 116px; }
+.item-precio span {
+  position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+  color: var(--gris); pointer-events: none;
+}
+.item-precio input {
+  padding-left: 26px; text-align: right; font-variant-numeric: tabular-nums; font-weight: 700;
+}
+
+.item.cambiado .item-precio input { border-color: var(--amarillo); color: var(--amarillo); }
+.item-antes {
+  display: block; font-size: .75rem; color: var(--gris);
+  text-align: right; margin-top: 4px; text-decoration: line-through;
+}
+
+/* --- barra de guardado --- */
+.guardar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  /* opaca a propósito: con alfa se transparentaba el listado por detrás */
+  background: #000;
+  border-top: 1px solid var(--borde);
+  box-shadow: 0 -12px 24px rgba(0, 0, 0, .6);
+}
+.guardar-info { flex: 1; min-width: 0; }
+.guardar-info strong { display: block; font-size: .9rem; }
+.guardar .boton { width: auto; margin-top: 0; padding: 0 22px; flex: 0 0 auto; }
+
+@media (max-width: 420px) {
+  .guardar { flex-direction: column; align-items: stretch; gap: 8px; }
+  .guardar-info { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .guardar .boton { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

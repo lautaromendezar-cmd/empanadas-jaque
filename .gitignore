@@ -3,3 +3,8 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
+
+# Nunca commitear secretos del panel: van como variables de entorno en Vercel
+.env
+.env.*
+*.pem

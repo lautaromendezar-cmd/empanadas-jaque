@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>Precios · Jaque Empanadas</title>
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+<body>
+
+<a class="saltar" href="#principal">Ir al contenido</a>
+
+<header class="barra">
+  <img class="barra-logo" src="/assets/img/logo.png" alt="Jaque Empanadas" width="120" height="38">
+  <span class="barra-titulo">Precios</span>
+  <button type="button" id="salir" class="boton-texto" hidden>Salir</button>
+</header>
+
+<main id="principal">
+
+  <!-- ENTRAR -->
+  <section id="pantalla-entrar" class="tarjeta" aria-labelledby="t-entrar">
+    <h1 id="t-entrar">Panel de precios</h1>
+    <p class="ayuda">Entrá con la contraseña para cambiar los precios del menú.</p>
+    <form id="form-entrar" autocomplete="on">
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password" autocomplete="current-password"
+             required minlength="8" spellcheck="false">
+      <button type="submit" class="boton" id="boton-entrar">Entrar</button>
+    </form>
+    <p class="aviso" id="aviso-entrar" role="alert" hidden></p>
+  </section>
+
+  <!-- PRECIOS -->
+  <section id="pantalla-precios" class="pantalla" aria-labelledby="t-precios" hidden>
+    <div class="encabezado">
+      <h1 id="t-precios">Precios del menú</h1>
+      <p class="ayuda" id="ultima-actualizacion"></p>
+    </div>
+
+    <div class="tarjeta herramientas">
+      <h2>Cambiar todos de una</h2>
+      <p class="ayuda">Aplica un porcentaje sobre los precios de abajo. Todavía no guarda nada.</p>
+      <div class="fila-herramientas">
+        <div class="campo-porcentaje">
+          <label for="porcentaje">Aumento</label>
+          <div class="con-sufijo">
+            <input type="number" id="porcentaje" inputmode="decimal" step="0.5" min="-90" max="500" value="10">
+            <span aria-hidden="true">%</span>
+          </div>
+        </div>
+        <div class="campo-porcentaje">
+          <label for="redondeo">Redondear a</label>
+          <select id="redondeo">
+            <option value="50">$50</option>
+            <option value="100" selected>$100</option>
+            <option value="10">$10</option>
+            <option value="1">sin redondear</option>
+          </select>
+        </div>
+        <div class="campo-porcentaje">
+          <label for="alcance">Aplicar a</label>
+          <select id="alcance"><option value="todos">Todo el menú</option></select>
+        </div>
+      </div>
+      <button type="button" class="boton secundario" id="aplicar-porcentaje">Aplicar</button>
+    </div>
+
+    <div id="grupos"></div>
+
+    <p class="aviso" id="aviso-precios" role="alert" hidden></p>
+  </section>
+
+</main>
+
+<!-- BARRA DE GUARDADO -->
+<div class="guardar" id="barra-guardar" hidden>
+  <div class="guardar-info">
+    <strong id="resumen-cambios">Sin cambios</strong>
+    <button type="button" class="boton-texto" id="deshacer" hidden>Deshacer todo</button>
+  </div>
+  <button type="button" class="boton" id="guardar" disabled>Guardar y publicar</button>
+</div>
+
+<script src="/assets/js/admin.js"></script>
+</body>
+</html>
