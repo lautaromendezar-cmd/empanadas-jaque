@@ -36,10 +36,13 @@ module.exports = async function handler(req, res) {
 
     const esperaSegundos = auth.bloqueado(req);
     if (esperaSegundos) {
+      const espera = esperaSegundos < 60
+        ? `${esperaSegundos} segundos`
+        : `${Math.ceil(esperaSegundos / 60)} minutos`;
       return json(
         res,
         429,
-        { error: `Demasiados intentos. Probá de nuevo en ${Math.ceil(esperaSegundos / 60)} minutos.` },
+        { error: `Demasiados intentos. Probá de nuevo en ${espera}.` },
         { 'Retry-After': String(esperaSegundos) }
       );
     }

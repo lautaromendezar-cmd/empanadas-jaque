@@ -280,6 +280,13 @@ async function llamar(handler, opciones) {
     cierto(!JSON.stringify(r.cuerpo).includes(PASS), 'devolvió la contraseña');
   });
 
+  await probarAsync('los primeros 4 errores NO bloquean', async () => {
+    for (let i = 0; i < 4; i++) {
+      const r = await llamar(apiSesion, { method: 'POST', body: { password: 'mal' }, ip: '7.7.7.1' });
+      igual(r.statusCode, 401, `intento ${i + 1}`);
+    }
+  });
+
   await probarAsync('tras 5 intentos fallidos la IP queda bloqueada', async () => {
     for (let i = 0; i < 5; i++) {
       await llamar(apiSesion, { method: 'POST', body: { password: 'mal' }, ip: '7.7.7.7' });
@@ -287,6 +294,56 @@ async function llamar(handler, opciones) {
     const r = await llamar(apiSesion, { method: 'POST', body: { password: PASS }, ip: '7.7.7.7' });
     igual(r.statusCode, 429, 'código');
     cierto(r.headers['retry-after'], 'falta Retry-After');
+    // el primer castigo es corto, no un cuarto de hora
+    cierto(Number(r.headers['retry-after']) <= 30, `castigo inicial: ${r.headers['retry-after']}s`);
+    cierto(/segundos/.test(r.cuerpo.error), `mensaje en segundos: ${r.cuerpo.error}`);
+  });
+
+  await probarAsync('el bloqueo de una IP no afecta a las demás', async () => {
+    const r = await llamar(apiSesion, { method: 'POST', body: { password: 'mal' }, ip: '8.8.8.1' });
+    igual(r.statusCode, 401, 'otra IP debería poder intentar');
+  });
+
+  // El caso que le pasó al dueño: se cumplió el castigo, y un ÚNICO error
+  // posterior lo volvía a bloquear el tiempo completo porque el contador de
+  // fallos no se olvidaba nunca.
+  await probarAsync('pasada la ventana, un solo error no vuelve a bloquear', async () => {
+    const IP = '7.7.7.9';
+    for (let i = 0; i < 6; i++) {
+      await llamar(apiSesion, { method: 'POST', body: { password: 'mal' }, ip: IP });
+    }
+    igual(
+      (await llamar(apiSesion, { method: 'POST', body: { password: PASS }, ip: IP })).statusCode,
+      429, 'debería estar bloqueado recién castigado'
+    );
+
+    // Simular que pasó un rato largo sin intentos. El salto va escrito a mano y
+    // no como auth.VENTANA_MS a propósito: tiene que superar también al bloqueo
+    // fijo de 15 minutos de la versión vieja, o esta prueba pasa sin probar nada.
+    const SALTO_MS = 20 * 60 * 1000;
+    const real = Date.now;
+    Date.now = () => real() + SALTO_MS;
+    try {
+      const unError = await llamar(apiSesion, { method: 'POST', body: { password: 'mal' }, ip: IP });
+      igual(unError.statusCode, 401, 'un error aislado tiene que dar 401, no 429');
+      const otro = await llamar(apiSesion, { method: 'POST', body: { password: 'mal' }, ip: IP });
+      igual(otro.statusCode, 401, 'el segundo error tampoco bloquea');
+    } finally {
+      Date.now = real;
+    }
+  });
+
+  await probarAsync('entrar bien limpia el contador de fallos', async () => {
+    const IP = '7.7.7.5';
+    for (let i = 0; i < 4; i++) {
+      await llamar(apiSesion, { method: 'POST', body: { password: 'mal' }, ip: IP });
+    }
+    igual((await llamar(apiSesion, { method: 'POST', body: { password: PASS }, ip: IP })).statusCode, 200, 'debería entrar');
+    // con el contador limpio, vuelve a tener los 5 intentos completos
+    for (let i = 0; i < 4; i++) {
+      const r = await llamar(apiSesion, { method: 'POST', body: { password: 'mal' }, ip: IP });
+      igual(r.statusCode, 401, `tras entrar bien, intento ${i + 1} no debería bloquear`);
+    }
   });
 
   await probarAsync('con sesión, GET /api/menu devuelve los precios sin datos de más', async () => {
