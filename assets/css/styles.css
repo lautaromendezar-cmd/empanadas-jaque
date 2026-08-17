@@ -594,7 +594,8 @@ body.is-stuck .menu-toolbar { top: 66px; }
 }
 
 @media (max-width: 620px) {
-  .hero { min-height: 92svh; padding-top: calc(var(--header-h) + 24px); }
+  /* Pantalla completa en mobile: sin indicador de scroll, el padding inferior se achica. */
+  .hero { min-height: 100svh; padding-top: calc(var(--header-h) + 24px); padding-bottom: 40px; }
   .hero-lead { font-size: .96rem; }
   .hero-cta { flex-direction: column; align-items: stretch; }
   .hero-cta .btn { width: 100%; }
