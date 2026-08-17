@@ -15,11 +15,12 @@
 const crypto = require('crypto');
 const auth = require('../lib/auth.js');
 const github = require('../lib/github.js');
-const { validarPrecio, reemplazarEnHtml, PRECIO_MIN, PRECIO_MAX } = require('../lib/render-menu.js');
+const { validarPrecio, reemplazarEnHtml, actualizarSitemap, PRECIO_MIN, PRECIO_MAX } = require('../lib/render-menu.js');
 const { json, pedidoDelPanel, cuerpoJson, errorInterno } = require('./_comun.js');
 
 const RUTA_MENU = 'data/menu.json';
 const RUTA_INDEX = 'index.html';
+const RUTA_SITEMAP = 'sitemap.xml';
 
 function version(texto) {
   return crypto.createHash('sha256').update(texto).digest('hex').slice(0, 16);
@@ -122,11 +123,19 @@ module.exports = async function handler(req, res) {
       .join(', ');
     const resto = cambios.length > 6 ? ` y ${cambios.length - 6} mas` : '';
 
+    const sitemapActual = await github.leerArchivo(RUTA_SITEMAP);
+    const sitemapNuevo = actualizarSitemap(sitemapActual, menu.actualizado);
+
+    const archivos = [
+      { ruta: RUTA_MENU, contenido: menuNuevo },
+      { ruta: RUTA_INDEX, contenido: indexNuevo },
+    ];
+    // El sitemap sólo entra al commit si de verdad cambió, para no ensuciar el
+    // historial con un archivo idéntico cada vez.
+    if (sitemapNuevo !== sitemapActual) archivos.push({ ruta: RUTA_SITEMAP, contenido: sitemapNuevo });
+
     const commit = await github.commitearArchivos(
-      [
-        { ruta: RUTA_MENU, contenido: menuNuevo },
-        { ruta: RUTA_INDEX, contenido: indexNuevo },
-      ],
+      archivos,
       `Precios actualizados desde el panel: ${detalle}${resto}`
     );
 

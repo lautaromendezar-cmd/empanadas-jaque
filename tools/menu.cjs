@@ -18,8 +18,9 @@ const readline = require('readline');
 const RAIZ = path.join(__dirname, '..');
 const RUTA_MENU = path.join(RAIZ, 'data', 'menu.json');
 const RUTA_INDEX = path.join(RAIZ, 'index.html');
+const RUTA_SITEMAP = path.join(RAIZ, 'sitemap.xml');
 
-const { reemplazarEnHtml } = require(path.join(RAIZ, 'lib', 'render-menu.js'));
+const { reemplazarEnHtml, actualizarSitemap } = require(path.join(RAIZ, 'lib', 'render-menu.js'));
 const { hashearPassword } = require(path.join(RAIZ, 'lib', 'auth.js'));
 
 function leerMenu() {
@@ -27,14 +28,28 @@ function leerMenu() {
 }
 
 function generar() {
+  const menu = leerMenu();
   const html = fs.readFileSync(RUTA_INDEX, 'utf8');
-  const nuevo = reemplazarEnHtml(html, leerMenu());
-  if (nuevo === html) {
-    console.log('index.html ya estaba al día.');
-    return 0;
+  const nuevo = reemplazarEnHtml(html, menu);
+  let cambios = 0;
+
+  if (nuevo !== html) {
+    fs.writeFileSync(RUTA_INDEX, nuevo, 'utf8');
+    console.log('index.html regenerado desde data/menu.json');
+    cambios++;
   }
-  fs.writeFileSync(RUTA_INDEX, nuevo, 'utf8');
-  console.log('index.html regenerado desde data/menu.json');
+
+  if (menu.actualizado) {
+    const sitemap = fs.readFileSync(RUTA_SITEMAP, 'utf8');
+    const sitemapNuevo = actualizarSitemap(sitemap, menu.actualizado);
+    if (sitemapNuevo !== sitemap) {
+      fs.writeFileSync(RUTA_SITEMAP, sitemapNuevo, 'utf8');
+      console.log(`sitemap.xml actualizado a ${menu.actualizado}`);
+      cambios++;
+    }
+  }
+
+  if (!cambios) console.log('Ya estaba todo al día.');
   return 0;
 }
 

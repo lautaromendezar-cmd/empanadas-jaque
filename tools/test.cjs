@@ -112,16 +112,50 @@ probar('el menú real tiene los 28 gustos', () => {
   igual(total, 28, 'cantidad de gustos');
 });
 
-probar('cambiar un precio cambia el HTML y sólo el HTML del menú', () => {
+probar('cambiar un precio actualiza el listado Y los datos estructurados', () => {
   const copia = JSON.parse(JSON.stringify(menuReal));
   copia.grupos[0].items[0].precio = 9999;
   const nuevo = render.reemplazarEnHtml(indexReal, copia);
-  cierto(nuevo.includes('<span class="pprice">$9999</span>'), 'no aplicó el precio nuevo');
-  // nada fuera de las marcas se movió
-  const corte = (t) => t.slice(0, t.indexOf(render.MARCA_INICIO));
-  igual(corte(nuevo), corte(indexReal), 'cambió algo antes de la marca de inicio');
-  const cola = (t) => t.slice(t.indexOf(render.MARCA_FIN));
-  igual(cola(nuevo), cola(indexReal), 'cambió algo después de la marca de fin');
+
+  cierto(nuevo.includes('<span class="pprice">$9999</span>'), 'el listado no tiene el precio nuevo');
+  cierto(nuevo.includes('"price": "9999"'), 'los datos estructurados no tienen el precio nuevo');
+
+  // Fuera de los dos bloques generados no se movió una coma. Las marcas del
+  // JSON-LD están en el <head> y las del listado en el <body>, así que las
+  // zonas intactas son tres.
+  const zonas = (t) => [
+    t.slice(0, t.indexOf(render.MARCA_LD_INICIO)),
+    t.slice(t.indexOf(render.MARCA_LD_FIN), t.indexOf(render.MARCA_INICIO)),
+    t.slice(t.indexOf(render.MARCA_FIN)),
+  ];
+  const antes = zonas(indexReal);
+  const despues = zonas(nuevo);
+  const nombres = ['antes del JSON-LD', 'entre el JSON-LD y el listado', 'después del listado'];
+  antes.forEach((z, i) => igual(despues[i], z, `se movió algo ${nombres[i]}`));
+});
+
+probar('los datos estructurados del menú son JSON válido y completo', () => {
+  const bloque = render.renderMenuLd(menuReal);
+  const json = bloque.slice(bloque.indexOf('{'), bloque.lastIndexOf('}') + 1);
+  const doc = JSON.parse(json);
+  igual(doc['@type'], 'Menu', 'tipo');
+  igual(doc.hasMenuSection.length, 2, 'secciones');
+  const items = doc.hasMenuSection.flatMap((s) => s.hasMenuItem);
+  igual(items.length, 28, 'items');
+  cierto(items.every((i) => i.offers.priceCurrency === 'ARS'), 'falta la moneda en algún item');
+  cierto(items.every((i) => /^\d+$/.test(i.offers.price)), 'algún precio no es un número limpio');
+  // el Restaurant lo referencia por id
+  cierto(indexReal.includes(`"hasMenu": { "@id": "${doc['@id']}" }`), 'el Restaurant no apunta al Menu');
+});
+
+probar('un nombre con < no puede romper el script de datos estructurados', () => {
+  const copia = JSON.parse(JSON.stringify(menuReal));
+  copia.grupos[0].items[0].nombre = 'Carne </script><script>alert(1)</script>';
+  const bloque = render.renderMenuLd(copia);
+  const cuerpo = bloque.slice(bloque.indexOf('{'), bloque.lastIndexOf('}') + 1);
+  cierto(!cuerpo.includes('</script>'), 'se puede cerrar la etiqueta desde el nombre');
+  cierto(cuerpo.includes('\\u003c'), 'no escapó el <');
+  JSON.parse(cuerpo); // y sigue siendo JSON válido
 });
 
 // =====================================================================
@@ -204,7 +238,17 @@ process.env.GITHUB_TOKEN = 'token-de-mentira';
 const github = require(path.join(RAIZ, 'lib', 'github.js'));
 let commiteado = null;
 const menuGuardado = JSON.stringify(menuReal, null, 2) + '\n';
-github.leerArchivo = async (ruta) => (ruta === 'data/menu.json' ? menuGuardado : indexReal);
+const sitemapReal = fs.readFileSync(path.join(RAIZ, 'sitemap.xml'), 'utf8');
+
+// Mutable: la fecha del sitemap decide si entra o no al commit, así que cada
+// prueba fija la que necesita. Leerla del archivo real hacía que el resultado
+// dependiera del día en que se corrieran las pruebas.
+let sitemapStub = sitemapReal.replace(/<lastmod>[^<]*<\/lastmod>/, '<lastmod>2020-01-01</lastmod>');
+github.leerArchivo = async (ruta) => {
+  if (ruta === 'data/menu.json') return menuGuardado;
+  if (ruta === 'sitemap.xml') return sitemapStub;
+  return indexReal;
+};
 github.commitearArchivos = async (archivos, mensaje) => {
   commiteado = { archivos, mensaje };
   return { sha: 'abc123', url: 'https://github.com/test/commit/abc123' };
@@ -405,20 +449,49 @@ async function llamar(handler, opciones) {
     cierto(!commiteado, 'commiteó sin necesidad');
   });
 
-  await probarAsync('un cambio válido commitea los dos archivos juntos', async () => {
+  await probarAsync('un cambio válido commitea los tres archivos juntos', async () => {
     commiteado = null;
+    sitemapStub = sitemapReal.replace(/<lastmod>[^<]*<\/lastmod>/, '<lastmod>2020-01-01</lastmod>');
     const r = await llamar(apiMenu, {
       method: 'PUT', cookie: cookieBuena, body: { precios: { 'carne-suave': 4200, pollo: 4200 } },
     });
     igual(r.statusCode, 200, 'código');
     igual(r.cuerpo.cambios, 2, 'cantidad de cambios');
-    igual(commiteado.archivos.length, 2, 'archivos en el commit');
+
     const rutas = commiteado.archivos.map((a) => a.ruta).sort();
-    igual(rutas.join(','), 'data/menu.json,index.html', 'rutas commiteadas');
+    igual(rutas.join(','), 'data/menu.json,index.html,sitemap.xml', 'rutas commiteadas');
+
     const html = commiteado.archivos.find((a) => a.ruta === 'index.html').contenido;
-    cierto(html.includes('<span class="pprice">$4200</span>'), 'el HTML no tiene el precio nuevo');
+    cierto(html.includes('<span class="pprice">$4200</span>'), 'el listado no tiene el precio nuevo');
+    cierto(html.includes('"price": "4200"'), 'los datos estructurados no tienen el precio nuevo');
+
     const json = JSON.parse(commiteado.archivos.find((a) => a.ruta === 'data/menu.json').contenido);
     igual(json.grupos[0].items[0].precio, 4200, 'el JSON no tiene el precio nuevo');
+
+    const sitemap = commiteado.archivos.find((a) => a.ruta === 'sitemap.xml').contenido;
+    cierto(sitemap.includes(`<lastmod>${json.actualizado}</lastmod>`), 'el sitemap no quedó con la fecha del cambio');
+  });
+
+  await probarAsync('si el sitemap ya tiene la fecha de hoy, no entra al commit', async () => {
+    commiteado = null;
+    // fecha de hoy en Buenos Aires, la misma que va a poner el endpoint
+    const hoy = new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/Argentina/Buenos_Aires' }).format(new Date());
+    sitemapStub = sitemapReal.replace(/<lastmod>[^<]*<\/lastmod>/, `<lastmod>${hoy}</lastmod>`);
+
+    const r = await llamar(apiMenu, {
+      method: 'PUT', cookie: cookieBuena, body: { precios: { 'carne-suave': 4300 } },
+    });
+    igual(r.statusCode, 200, 'código');
+    const rutas = commiteado.archivos.map((a) => a.ruta).sort();
+    igual(rutas.join(','), 'data/menu.json,index.html', 'no debería incluir un sitemap idéntico');
+  });
+
+  await probarAsync('el sitemap sólo acepta fechas con forma de fecha', () => {
+    const { actualizarSitemap } = require(path.join(RAIZ, 'lib', 'render-menu.js'));
+    for (const mala of ['ayer', '2026-8-1', '', '2026-13-45x']) {
+      tira(() => actualizarSitemap(sitemapReal, mala), `aceptó "${mala}"`);
+    }
+    cierto(actualizarSitemap(sitemapReal, '2026-12-01').includes('<lastmod>2026-12-01</lastmod>'), 'no aplicó una fecha válida');
   });
 
   await probarAsync('una cookie con firma adulterada no sirve', async () => {

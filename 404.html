@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página no encontrada · Jaque Empanadas</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/assets/img/favicon.png" sizes="any">
+<link rel="apple-touch-icon" href="/assets/img/favicon.png">
+<meta name="theme-color" content="#000000">
+<style>
+  /* Autónoma a propósito: una página de error no debería depender de que
+     cargue la hoja de estilos del sitio ni las fuentes de Google. */
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; padding: 40px 24px;
+    background: #0d0d0d; color: #f2f2f2; text-align: center;
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  img { width: 200px; height: auto; margin-bottom: 24px; }
+  h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); margin: 0 0 8px; letter-spacing: -.01em; }
+  p { color: #9a9a9a; margin: 0 0 8px; max-width: 42ch; }
+  .acciones { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px; }
+  a {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 52px; padding: 0 28px; border-radius: 10px;
+    font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    font-size: .9rem; text-decoration: none;
+  }
+  .principal { background: #ffdf00; color: #000; }
+  .secundario { border: 1px solid rgba(255,255,255,.35); color: #f2f2f2; }
+  a:hover { filter: brightness(1.1); }
+  a:focus-visible { outline: 3px solid #ffdf00; outline-offset: 3px; }
+  .telefonos { margin-top: 32px; font-size: .95rem; color: #9a9a9a; }
+  .telefonos a {
+    display: inline; min-height: 0; padding: 4px 6px; text-transform: none;
+    letter-spacing: 0; font-size: 1rem; color: #ffdf00; border: 0;
+  }
+</style>
+</head>
+<body>
+
+  <img src="/assets/img/logo.png" alt="Jaque Empanadas" width="250" height="92">
+
+  <h1>Esta página no existe</h1>
+  <p>Puede que el enlace sea viejo o que esté mal escrito. El menú, los horarios y
+     la dirección están todos en la página principal.</p>
+
+  <div class="acciones">
+    <a class="principal" href="/">Ir al inicio</a>
+    <a class="secundario" href="/#menu">Ver el menú</a>
+  </div>
+
+  <p class="telefonos">
+    ¿Querés pedir ahora? Llamanos al
+    <a href="tel:+541147979222">4797-9222</a>,
+    <a href="tel:+541177097500">7709-7500</a> o
+    <a href="tel:+541147969599">4796-9599</a>
+  </p>
+
+</body>
+</html>

@@ -53,15 +53,318 @@
     "postalCode": "B1638BVP",
     "addressCountry": "AR"
   },
+  "areaServed": { "@type": "City", "name": "Vicente López", "addressRegion": "Buenos Aires", "addressCountry": "AR" },
+  "currenciesAccepted": "ARS",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "294" },
   "openingHoursSpecification": [{
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
     "opens": "19:30", "closes": "22:45"
   }],
-  "hasMenu": "https://empanadasjaque.com.ar/#menu"
+  "hasMenu": { "@id": "https://empanadasjaque.com.ar/#menu" }
 }
 </script>
+
+<!-- Los 28 gustos con su precio, para Google. Se genera solo desde data/menu.json:
+     no editar a mano, se pisa en el próximo cambio de precios. -->
+<!-- MENU-LD:START -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "@id": "https://empanadasjaque.com.ar/#menu",
+  "name": "Menú de Jaque Empanadas",
+  "inLanguage": "es-AR",
+  "hasMenuSection": [
+    {
+      "@type": "MenuSection",
+      "name": "Empanadas",
+      "description": "Fritas o al horno",
+      "hasMenuItem": [
+        {
+          "@type": "MenuItem",
+          "name": "Carne suave",
+          "offers": {
+            "@type": "Offer",
+            "price": "3500",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Carne picante",
+          "offers": {
+            "@type": "Offer",
+            "price": "3500",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Porteña",
+          "offers": {
+            "@type": "Offer",
+            "price": "3500",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Jamón y queso",
+          "offers": {
+            "@type": "Offer",
+            "price": "3500",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Roquefort y jamón",
+          "offers": {
+            "@type": "Offer",
+            "price": "3500",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Pollo",
+          "offers": {
+            "@type": "Offer",
+            "price": "3500",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Atún",
+          "offers": {
+            "@type": "Offer",
+            "price": "3500",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Humita",
+          "offers": {
+            "@type": "Offer",
+            "price": "3500",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Verdura",
+          "offers": {
+            "@type": "Offer",
+            "price": "3500",
+            "priceCurrency": "ARS"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "MenuSection",
+      "name": "Canastitas",
+      "description": "Todas con base de mozzarella",
+      "hasMenuItem": [
+        {
+          "@type": "MenuItem",
+          "name": "Capresse",
+          "description": "Tomate cherry, albahaca",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Americana",
+          "description": "Huevo, panceta, papas pay",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Pollo al verdeo",
+          "description": "Pollo, crema de verdeo",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Portobello",
+          "description": "Hongos portobello a la provenzal",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Panceta y ciruelas",
+          "description": "Panceta y ciruelas",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Roque, miel y nuez",
+          "description": "Queso azul, miel y nueces",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Francesa",
+          "description": "Jamón cocido, salsa blanca y queso gruyere",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Fugazza",
+          "description": "Cebolla, aceite de oliva, orégano",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Española",
+          "description": "Jamón crudo, tomates secos y ajos asados",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Provolone",
+          "description": "Provolone en dados",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Provolone con jamón",
+          "description": "Jamón cocido y provolone en dados",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Jamón y palmitos",
+          "description": "Jamón cocido, palmitos y salsa golf",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Jamón y ananá",
+          "description": "Jamón cocido, ananá y azúcar negra",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Italiana",
+          "description": "Mortadela con pistachos “Bocatti”, stracciatella y albahaca",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Bondiola",
+          "description": "Bondiola de cerdo, barbacoa, queso cheddar y pepinos agridulces",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Espinaca y queso brie",
+          "description": "Espinaca blanqueada y queso brie",
+          "offers": {
+            "@type": "Offer",
+            "price": "3600",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Brócoli",
+          "description": "Brócoli con salsa blanca",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Espárragos",
+          "description": "Espárragos con queso reggianito",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Repollitos de Bruselas",
+          "description": "Repollitos de bruselas y queso parmesano",
+          "offers": {
+            "@type": "Offer",
+            "price": "3700",
+            "priceCurrency": "ARS"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+<!-- MENU-LD:END -->
 </head>
 <body>
 
@@ -318,7 +621,7 @@
   <section class="location" id="ubicacion">
     <div class="wrap location-head">
       <h2 class="reveal">Ubicación</h2>
-      <p class="reveal" data-delay="1">Estamos en <strong>Gdor. Valentín Vergara 1488</strong>, Vicente López — a metros de Av. Maipú.</p>
+      <p class="reveal" data-delay="1">Estamos en <strong>Gdor. Valentín Vergara 1488</strong>, en Florida, Vicente López — a metros de Av. Maipú.</p>
       <div class="location-actions reveal" data-delay="2">
         <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&destination=Gdor.+Valent%C3%ADn+Vergara+1488%2C+Vicente+L%C3%B3pez%2C+Buenos+Aires" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
