@@ -63,6 +63,16 @@ entrar al HTML del sitio desde el panel es un número.
    `ADMIN_PASSWORD_HASH`, `SESSION_SECRET`, `GITHUB_TOKEN`, `GITHUB_REPO`.
 4. Redeployar para que las variables tomen efecto.
 
+### Cambiar la contraseña
+
+```
+node tools/menu.cjs password
+```
+
+La pide por teclado (no se ve al tipear, y no queda en el historial de la terminal),
+la hace repetir, y devuelve el `ADMIN_PASSWORD_HASH` nuevo. Se reemplaza **sólo esa
+variable** en Vercel y se redeploya. El `SESSION_SECRET` y el token no se tocan.
+
 ### Probarlo sin deployar
 
 ```
