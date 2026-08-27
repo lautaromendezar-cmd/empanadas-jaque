@@ -252,16 +252,16 @@
 
   /* ---------------------------------------------------------
      7. Abierto / cerrado, en hora de Buenos Aires
-     Miércoles a domingo de 19:30 a 22:45. Lunes y martes cerrado.
+     Miércoles a domingo de 19:45 a 22:45. Lunes y martes cerrado.
      --------------------------------------------------------- */
   var SCHEDULE = {
-    0: [1170, 1365],  // domingo
+    0: [1185, 1365],  // domingo
     1: null,          // lunes
     2: null,          // martes
-    3: [1170, 1365],
-    4: [1170, 1365],
-    5: [1170, 1365],
-    6: [1170, 1365]
+    3: [1185, 1365],
+    4: [1185, 1365],
+    5: [1185, 1365],
+    6: [1185, 1365]
   };
   var DAY_NAMES = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
 
