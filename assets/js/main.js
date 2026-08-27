@@ -52,7 +52,11 @@
     document.body.classList.toggle('is-stuck', stuck);
 
     var max = document.documentElement.scrollHeight - window.innerHeight;
-    if (progress) progress.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+    // scaleX en vez de width: el ancho recalcula layout en cada cuadro del scroll.
+    if (progress) {
+      var pct = max > 0 ? y / max : 0;
+      progress.style.transform = 'scaleX(' + Math.min(1, Math.max(0, pct)) + ')';
+    }
 
     if (toTop) toTop.classList.toggle('is-on', y > 700);
     if (actionBar) {
@@ -227,6 +231,22 @@
       input.value = '';
       applyMenu();
       input.focus();
+    });
+  }
+
+  // Salida del estado vacío: limpia la búsqueda y vuelve a la carta completa.
+  var resetBtn = $('#menu-reset');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      if (input) input.value = '';
+      filter = 'all';
+      chips.forEach(function (c) {
+        var on = c.dataset.filter === 'all';
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-selected', String(on));
+      });
+      applyMenu();
+      if (input) input.focus();
     });
   }
 
