@@ -107,9 +107,9 @@ probar('index.html está al día con menu.json', () => {
   igual(render.reemplazarEnHtml(indexReal, menuReal), indexReal, 'el index quedó desfasado del menu.json');
 });
 
-probar('el menú real tiene los 28 gustos', () => {
+probar('el menú real tiene los 30 gustos', () => {
   const total = menuReal.grupos.reduce((n, g) => n + g.items.length, 0);
-  igual(total, 28, 'cantidad de gustos');
+  igual(total, 30, 'cantidad de gustos');
 });
 
 probar('cambiar un precio actualiza el listado Y los datos estructurados', () => {
@@ -141,7 +141,7 @@ probar('los datos estructurados del menú son JSON válido y completo', () => {
   igual(doc['@type'], 'Menu', 'tipo');
   igual(doc.hasMenuSection.length, 2, 'secciones');
   const items = doc.hasMenuSection.flatMap((s) => s.hasMenuItem);
-  igual(items.length, 28, 'items');
+  igual(items.length, 30, 'items');
   cierto(items.every((i) => i.offers.priceCurrency === 'ARS'), 'falta la moneda en algún item');
   cierto(items.every((i) => /^\d+$/.test(i.offers.price)), 'algún precio no es un número limpio');
   // el Restaurant lo referencia por id
@@ -395,7 +395,7 @@ async function llamar(handler, opciones) {
     igual(r.statusCode, 200, 'código');
     igual(r.cuerpo.grupos.length, 2, 'grupos');
     const total = r.cuerpo.grupos.reduce((n, g) => n + g.items.length, 0);
-    igual(total, 28, 'gustos');
+    igual(total, 30, 'gustos');
     cierto(r.cuerpo.version, 'falta la version');
     cierto(!JSON.stringify(r.cuerpo).includes('GITHUB'), 'filtró algo del entorno');
   });

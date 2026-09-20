@@ -1,6 +1,6 @@
 {
   "_comentario": "Fuente de verdad de los precios. Lo edita el panel /admin, que después regenera el bloque del menú dentro de index.html. No editar el HTML a mano.",
-  "actualizado": "2026-09-09",
+  "actualizado": "2026-09-20",
   "grupos": [
     {
       "id": "empanadas",
@@ -201,15 +201,29 @@
           "nombre": "Espárragos",
           "desc": "Espárragos con queso reggianito",
           "precio": 3900,
-          "buscar": "esparragos espárragos queso reggianito",
-          "nueva": true
+          "buscar": "esparragos espárragos queso reggianito"
         },
         {
           "id": "repollitos-de-bruselas",
           "nombre": "Repollitos de Bruselas",
           "desc": "Repollitos de bruselas y queso parmesano",
           "precio": 3900,
-          "buscar": "repollitos de bruselas queso parmesano",
+          "buscar": "repollitos de bruselas queso parmesano"
+        },
+        {
+          "id": "alemana",
+          "nombre": "Alemana",
+          "desc": "Salchicha alemana, cebolla y mostaza relish",
+          "precio": 3900,
+          "buscar": "alemana salchicha cebolla mostaza relish",
+          "nueva": true
+        },
+        {
+          "id": "pepperoni",
+          "nombre": "Pepperoni",
+          "desc": "Pepperoni, cebolla, tomate y morrón verde",
+          "precio": 3900,
+          "buscar": "pepperoni peperoni cebolla tomate morron morrón verde",
           "nueva": true
         }
       ]

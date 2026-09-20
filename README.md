@@ -6,7 +6,7 @@ en el repo es exactamente lo que se sirve.
 
 ```
 index.html          la página entera
-data/menu.json      los 28 gustos y sus precios (fuente de verdad)
+data/menu.json      los 30 gustos y sus precios (fuente de verdad)
 admin.html          el panel de precios
 api/                funciones del panel (sesión y guardado)
 lib/                lógica compartida: render del menú, sesión, GitHub
@@ -127,7 +127,7 @@ Lo que cambió:
 - **Navegación**: header que se compacta al scrollear, sección activa marcada en el menú (scrollspy),
   barra de progreso, anclas que no quedan tapadas por el header, panel lateral en mobile.
 - **Barra fija inferior en mobile** con Llamar / Ver menú / Cómo llegar.
-- **Buscador y filtros en el menú** (28 gustos): filtra por categoría y busca sin importar las tildes.
+- **Buscador y filtros en el menú** (30 gustos): filtra por categoría y busca sin importar las tildes.
 - **Cartel de abierto / cerrado** calculado en hora de Buenos Aires, con el día de hoy marcado en la grilla.
 - **Reseñas propias** en vez del widget de Trustindex: sin script de terceros ni cookies.
 - **Peso**: ~1 MB de imágenes contra los ~4 MB del original, y sin jQuery, Elementor ni 50 hojas de estilo.
