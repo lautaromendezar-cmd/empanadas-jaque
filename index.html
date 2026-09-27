@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/img/hero.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,700;0,800;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&family=RocknRoll+One&family=Rosarivo:ital@1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/styles.css?v=2">
 
 <script>
   /* Marca que el JS corre. Los reveals sólo se ocultan si esta clase existe,
@@ -718,61 +718,78 @@
 
   <!-- ═══════════ PREGUNTAS ═══════════ -->
   <!-- Las respuestas repiten datos que ya están en la página a propósito: acá las
-       busca quien llega de Google sin conocer el local. Si cambian los gustos o
-       el horario, esta sección se edita a mano — no la genera menu.json.
-       El precio se contesta sin número justamente para no desincronizarse del panel. -->
+       busca quien llega de Google sin conocer el local. Si cambian los gustos, el
+       horario o las formas de pago, esta sección se edita a mano — no sale de
+       menu.json. El precio se contesta sin número justamente para que no se
+       desincronice del panel, que es la única fuente de verdad. -->
   <section class="faq" id="preguntas" aria-labelledby="faq-title">
-    <div class="wrap">
-      <h2 id="faq-title" class="reveal">Preguntas frecuentes</h2>
-      <div class="faq-grid">
-        <div class="faq-item reveal">
-          <h3>¿Hacen delivery en Vicente López?</h3>
-          <p>Sí, en auto y sin cargo, en el mismo horario en que está abierto el local. La zona
-            de entrega es el cuadrante que forman Puente Saavedra, el río, Corrientes/Ugarte y la Panamericana.
-            Para pedir, llamá al <a href="tel:+541147979222">4797-9222</a>.</p>
-        </div>
-        <div class="faq-item reveal">
-          <h3>¿Se puede retirar por el local?</h3>
-          <p>Sí. Además del delivery, podés pasar a buscar tu pedido por el local, en el
-            horario de atención.</p>
-        </div>
-        <div class="faq-item reveal" data-delay="1">
-          <h3>¿Hay un mínimo para pedir a domicilio?</h3>
-          <p>Sí: el envío arranca en 6 unidades. Para retirar por el local no hay mínimo.</p>
-        </div>
-        <div class="faq-item reveal" data-delay="1">
-          <h3>¿Cómo se paga?</h3>
-          <p>En el local: efectivo, QR, transferencia y tarjeta de débito. En el delivery:
-            efectivo, QR o transferencia.</p>
-        </div>
-        <div class="faq-item reveal" data-delay="2">
-          <h3>¿Están abiertos hoy?</h3>
-          <p>Abrimos de miércoles a domingo, de 19:45 a 22:45. Lunes y martes el local está
-            cerrado. Más arriba, en <a href="#delivery">Delivery</a>, está el horario completo
-            con el día de hoy marcado.</p>
-        </div>
-        <div class="faq-item reveal" data-delay="2">
-          <h3>¿Cuánto sale una empanada?</h3>
-          <p>Todas las empanadas tienen el mismo precio, y todas las canastitas también. Los dos
-            precios están en <a href="#menu">el menú de esta página</a>, siempre al día.</p>
-        </div>
-        <div class="faq-item reveal" data-delay="3">
-          <h3>¿Las empanadas son fritas o al horno?</h3>
-          <p>Las hacemos de las dos formas y elegís cuando pedís. Las canastitas van todas con
-            base de mozzarella.</p>
-        </div>
-        <div class="faq-item reveal" data-delay="3">
-          <h3>¿Tienen empanadas sin carne?</h3>
-          <p>Sí. Entre las empanadas están humita y verdura. Entre las canastitas hay capresse,
-            portobello, fugazza, espinaca y queso brie, brócoli, espárragos y repollitos de
-            Bruselas.</p>
-        </div>
-        <div class="faq-item reveal" data-delay="4">
-          <h3>¿Dónde está el local?</h3>
-          <p>En Gdor. Valentín Vergara 1488, en Florida, Vicente López, a metros de Av. Maipú.
-            Podés ver <a href="#ubicacion">cómo llegar</a> en el mapa.</p>
-        </div>
+    <div class="wrap faq-layout">
+
+      <div class="faq-rail">
+        <p class="eyebrow reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3.3 3.2 5 6.1 5 8.7a5 5 0 0 1-10 0C7 8.1 8.7 5.2 12 2z"/></svg>
+          Antes de pedir
+        </p>
+        <h2 id="faq-title" class="reveal" data-delay="1">Preguntas frecuentes</h2>
+        <p class="script-note reveal" data-delay="2">lo que más nos consultan</p>
+        <p class="faq-rail-note reveal" data-delay="3">Si la tuya no está acá, la contestamos
+          por teléfono en el horario del local.</p>
+        <a class="btn btn-dark reveal" data-delay="4" href="tel:+541147979222">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1z"/></svg>
+          Llamar al 4797-9222
+        </a>
       </div>
+
+      <div class="faq-panel reveal" data-delay="1">
+          <div class="faq-item">
+            <h3>¿Hacen delivery en Vicente López?</h3>
+            <p>Sí, en auto y sin cargo, en el mismo horario en que está abierto el local. La zona
+              de entrega es el cuadrante que forman Puente Saavedra, el río, Corrientes/Ugarte y la Panamericana.
+              Para pedir, llamá al <a href="tel:+541147979222">4797-9222</a>.</p>
+          </div>
+          <div class="faq-item">
+            <h3>¿Se puede retirar por el local?</h3>
+            <p>Sí. Además del delivery, podés pasar a buscar tu pedido por el local, en el
+              horario de atención.</p>
+          </div>
+          <div class="faq-item">
+            <h3>¿Hay un mínimo para pedir a domicilio?</h3>
+            <p>Sí: el envío arranca en 6 unidades. Para retirar por el local no hay mínimo.</p>
+          </div>
+          <div class="faq-item">
+            <h3>¿Cómo se paga?</h3>
+            <p>En el local: efectivo, QR, transferencia y tarjeta de débito. En el delivery:
+              efectivo, QR o transferencia.</p>
+          </div>
+          <div class="faq-item">
+            <h3>¿Están abiertos hoy?</h3>
+            <p>Abrimos de miércoles a domingo, de 19:45 a 22:45. Lunes y martes el local está
+              cerrado. Más arriba, en <a href="#delivery">Delivery</a>, está el horario completo
+              con el día de hoy marcado.</p>
+          </div>
+          <div class="faq-item">
+            <h3>¿Cuánto sale una empanada?</h3>
+            <p>Todas las empanadas tienen el mismo precio, y todas las canastitas también. Los dos
+              precios están en <a href="#menu">el menú de esta página</a>, siempre al día.</p>
+          </div>
+          <div class="faq-item">
+            <h3>¿Las empanadas son fritas o al horno?</h3>
+            <p>Las hacemos de las dos formas y elegís cuando pedís. Las canastitas van todas con
+              base de mozzarella.</p>
+          </div>
+          <div class="faq-item">
+            <h3>¿Tienen empanadas sin carne?</h3>
+            <p>Sí. Entre las empanadas están humita y verdura. Entre las canastitas hay capresse,
+              portobello, fugazza, espinaca y queso brie, brócoli, espárragos y repollitos de
+              Bruselas.</p>
+          </div>
+          <div class="faq-item">
+            <h3>¿Dónde está el local?</h3>
+            <p>En Gdor. Valentín Vergara 1488, en Florida, Vicente López, a metros de Av. Maipú.
+              Podés ver <a href="#ubicacion">cómo llegar</a> en el mapa.</p>
+          </div>
+      </div>
+
     </div>
   </section>
 
@@ -812,6 +829,6 @@
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l8 8-1.6 1.6L13 8.2V20h-2V8.2l-5.4 5.4L4 12z"/></svg>
 </button>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=2"></script>
 </body>
 </html>

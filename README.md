@@ -18,6 +18,20 @@ vercel.json         cache, headers de seguridad y CSP del panel
 robots.txt          /  sitemap.xml
 ```
 
+## Caché de los assets
+
+Las fotos de `assets/img/` se sirven con caché de un año e `immutable`: su contenido
+no cambia bajo el mismo nombre. **El CSS y el JS no**: se editan y conservan el nombre,
+así que van con `max-age=0, must-revalidate` y el navegador revalida contra el ETag
+(devuelve 304 si no cambió, que es casi siempre).
+
+Esto se cambió el 27-sep-2026. Antes todo `assets/` era `immutable`, y eso dejaba a
+cualquiera que ya hubiera visitado el sitio con la hoja de estilos vieja durante un año
+mientras recibía el HTML nuevo: la página se veía sin diseño. Cambiar la cabecera no
+alcanza para quien ya tiene la copia guardada — su navegador ni pregunta —, así que los
+`<link>` y `<script>` llevan además `?v=N`. **Si alguna vez hace falta forzar una
+recarga, subí ese número** en `index.html` y en `admin.html`.
+
 ## Cómo verlo
 
 Doble clic en `index.html`. Anda igual desde `file://` — el JS no es un módulo justamente para eso.
