@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jaque Empanadas: Delivery en Florida, Vicente López</title>
-<meta name="description" content="25 años elaborando las mejores empanadas y canastitas de Florida, Vicente López. Delivery en auto sin cargo. Pedidos al 4797-9222.">
+<title>Empanadas en Vicente López · Jaque Empanadas · Delivery</title>
+<meta name="description" content="Casa de empanadas en Florida, Vicente López. Empanadas fritas o al horno y canastitas. Delivery en auto sin cargo, miércoles a domingo. Pedidos al 4797-9222.">
 <link rel="canonical" href="https://empanadasjaque.com.ar/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_AR">
 <meta property="og:site_name" content="Jaque Empanadas">
-<meta property="og:title" content="Jaque Empanadas: Delivery en Florida, Vicente López">
-<meta property="og:description" content="25 años elaborando las mejores empanadas y canastitas de Florida, Vicente López. Delivery en auto sin cargo.">
+<meta property="og:title" content="Empanadas en Vicente López · Jaque Empanadas · Delivery">
+<meta property="og:description" content="Casa de empanadas en Florida, Vicente López. Empanadas fritas o al horno y canastitas. Delivery en auto sin cargo.">
 <meta property="og:url" content="https://empanadasjaque.com.ar/">
 <meta property="og:image" content="https://empanadasjaque.com.ar/assets/img/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -39,6 +39,7 @@
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "Jaque Empanadas",
+  "alternateName": "JAQUE Casa de empanadas",
   "description": "Empanadas y comidas regionales en Florida, Vicente López. Elaboración artesanal desde 2001.",
   "url": "https://empanadasjaque.com.ar/",
   "image": "https://empanadasjaque.com.ar/assets/img/hero.jpg",
@@ -53,8 +54,18 @@
     "postalCode": "B1638BVP",
     "addressCountry": "AR"
   },
-  "areaServed": { "@type": "City", "name": "Vicente López", "addressRegion": "Buenos Aires", "addressCountry": "AR" },
+  "areaServed": {
+    "@type": "City",
+    "name": "Vicente López",
+    "addressRegion": "Buenos Aires",
+    "addressCountry": "AR",
+    "description": "Entregas dentro del cuadrante entre Puente Saavedra, el Río de la Plata, Corrientes/Ugarte y la Panamericana."
+  },
   "currenciesAccepted": "ARS",
+  "hasDeliveryMethod": [
+    "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet",
+    "http://purl.org/goodrelations/v1#DeliveryModePickUp"
+  ],
   "acceptsReservations": "False",
   "sameAs": [
     "https://www.instagram.com/jaque_empanadas/",
@@ -472,7 +483,7 @@
           Nosotros
         </p>
         <h2 class="reveal" data-delay="1">25 años de pasión por el sabor en Vicente López</h2>
-        <p class="reveal" data-delay="2">Desde 2001, en Jaque nos dedicamos a ofrecer las mejores empanadas y canastitas, elaboradas con ingredientes frescos y recetas caseras.</p>
+        <p class="reveal" data-delay="2">Desde 2001 somos la casa de empanadas de Florida: elaboramos nuestras empanadas y canastitas con ingredientes frescos y recetas caseras.</p>
         <p class="reveal" data-delay="3">Nuestra misión es brindarte una experiencia única en cada bocado.</p>
         <ul class="feature-list reveal" data-delay="4">
           <li>
@@ -675,8 +686,9 @@
     <div class="wrap">
       <div class="delivery-head">
         <h2 class="reveal">Delivery</h2>
-        <p class="reveal" data-delay="1">Trabajamos en la zona de Vicente López, llevamos el sabor directo a tu puerta.</p>
+        <p class="reveal" data-delay="1">Llevamos los pedidos a tu puerta dentro de Vicente López: entregamos en el cuadrante que forman Puente Saavedra, el río, Corrientes/Ugarte y la Panamericana.</p>
         <p class="delivery-badge reveal" data-delay="2">Envíos en auto <mark>sin cargo</mark></p>
+        <p class="delivery-note reveal" data-delay="3">Mínimo de envío: 6 unidades</p>
       </div>
 
       <div class="delivery-grid">
@@ -699,6 +711,66 @@
             <a class="btn btn-primary" href="tel:+541147979222">Pedir al 4797-9222</a>
             <p class="hours-alt">También <a href="tel:+541177097500">7709-7500</a> y <a href="tel:+541147969599">4796-9599</a></p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PREGUNTAS ═══════════ -->
+  <!-- Las respuestas repiten datos que ya están en la página a propósito: acá las
+       busca quien llega de Google sin conocer el local. Si cambian los gustos o
+       el horario, esta sección se edita a mano — no la genera menu.json.
+       El precio se contesta sin número justamente para no desincronizarse del panel. -->
+  <section class="faq" id="preguntas" aria-labelledby="faq-title">
+    <div class="wrap">
+      <h2 id="faq-title" class="reveal">Preguntas frecuentes</h2>
+      <div class="faq-grid">
+        <div class="faq-item reveal">
+          <h3>¿Hacen delivery en Vicente López?</h3>
+          <p>Sí, en auto y sin cargo, en el mismo horario en que está abierto el local. La zona
+            de entrega es el cuadrante que forman Puente Saavedra, el río, Corrientes/Ugarte y la Panamericana.
+            Para pedir, llamá al <a href="tel:+541147979222">4797-9222</a>.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3>¿Se puede retirar por el local?</h3>
+          <p>Sí. Además del delivery, podés pasar a buscar tu pedido por el local, en el
+            horario de atención.</p>
+        </div>
+        <div class="faq-item reveal" data-delay="1">
+          <h3>¿Hay un mínimo para pedir a domicilio?</h3>
+          <p>Sí: el envío arranca en 6 unidades. Para retirar por el local no hay mínimo.</p>
+        </div>
+        <div class="faq-item reveal" data-delay="1">
+          <h3>¿Cómo se paga?</h3>
+          <p>En el local: efectivo, QR, transferencia y tarjeta de débito. En el delivery:
+            efectivo, QR o transferencia.</p>
+        </div>
+        <div class="faq-item reveal" data-delay="2">
+          <h3>¿Están abiertos hoy?</h3>
+          <p>Abrimos de miércoles a domingo, de 19:45 a 22:45. Lunes y martes el local está
+            cerrado. Más arriba, en <a href="#delivery">Delivery</a>, está el horario completo
+            con el día de hoy marcado.</p>
+        </div>
+        <div class="faq-item reveal" data-delay="2">
+          <h3>¿Cuánto sale una empanada?</h3>
+          <p>Todas las empanadas tienen el mismo precio, y todas las canastitas también. Los dos
+            precios están en <a href="#menu">el menú de esta página</a>, siempre al día.</p>
+        </div>
+        <div class="faq-item reveal" data-delay="3">
+          <h3>¿Las empanadas son fritas o al horno?</h3>
+          <p>Las hacemos de las dos formas y elegís cuando pedís. Las canastitas van todas con
+            base de mozzarella.</p>
+        </div>
+        <div class="faq-item reveal" data-delay="3">
+          <h3>¿Tienen empanadas sin carne?</h3>
+          <p>Sí. Entre las empanadas están humita y verdura. Entre las canastitas hay capresse,
+            portobello, fugazza, espinaca y queso brie, brócoli, espárragos y repollitos de
+            Bruselas.</p>
+        </div>
+        <div class="faq-item reveal" data-delay="4">
+          <h3>¿Dónde está el local?</h3>
+          <p>En Gdor. Valentín Vergara 1488, en Florida, Vicente López, a metros de Av. Maipú.
+            Podés ver <a href="#ubicacion">cómo llegar</a> en el mapa.</p>
         </div>
       </div>
     </div>
