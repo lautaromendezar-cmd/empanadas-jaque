@@ -1,0 +1,83 @@
+{
+  "puntaje": 4.6,
+  "total": 313,
+  "resenas": [
+    {
+      "autor": "Vange Santana",
+      "estrellas": 5,
+      "fecha": "2026-09",
+      "texto": "Las mejores empanadas de Vicente López! Recomiendo las de roquefort, miel y nuez! 🙌",
+      "foto": null
+    },
+    {
+      "autor": "R D",
+      "estrellas": 5,
+      "fecha": "2026-09",
+      "texto": "Empanadas familiares, estas son mis favoritas en Vicente López. ¡Prueba la Porteña!",
+      "foto": null
+    },
+    {
+      "autor": "Goran Herman",
+      "estrellas": 5,
+      "fecha": "2026-09",
+      "texto": "Las mejores empanadas de la zona. Si o si tenés que pedir la americana y la de carne frita.",
+      "foto": null
+    },
+    {
+      "autor": "Luciano Marin",
+      "estrellas": 5,
+      "fecha": "2026-08",
+      "texto": "Excelentes empanadas me sorprendieron, las fritas sequitas no caen mal no son pesadas, las de carne increíble, humita un 10, caprese gourmet, en fin precio calidad muy bueno las recomiendo 100%. No se van a arrepentir.",
+      "foto": null
+    },
+    {
+      "autor": "Hernan Mosquera",
+      "estrellas": 5,
+      "fecha": "2026-07",
+      "texto": "Excelente calidad ! Muy buenas empanadas y canastitas",
+      "foto": null
+    },
+    {
+      "autor": "Jandrea",
+      "estrellas": 5,
+      "fecha": "2026-05",
+      "texto": "Las empanadas son espectaculares. La masa es muy buena. Probamos la de bondiola… increíble. La de carne es muy gustosa y la de pollo, súper rica",
+      "foto": null
+    },
+    {
+      "autor": "Federico",
+      "estrellas": 5,
+      "fecha": "2026-04",
+      "texto": "Las empanadas son espectaculares, hace como 20 años compro ahí y siempre mantienen la misma calidad de siempre. Para mí las dos mejores son la canastita americana, la de bondiola braseada y la de carne picante cuchillo",
+      "foto": null
+    },
+    {
+      "autor": "Miri Alvarez",
+      "estrellas": 5,
+      "fecha": "2026-01",
+      "texto": "De las mejores empanadas que comimos. No llegan a nuestro domicilio porque estamos lejos pero cada semana sin falta las vamos a buscar. ¡Valen la pena! Y la atención siempre de 10.",
+      "foto": null
+    },
+    {
+      "autor": "Valentin Esposito",
+      "estrellas": 5,
+      "fecha": "2026-01",
+      "texto": "Sin lugar a discusión, el mejor lugar de empanadas de Vicente López, deliciosas TODAS, siempre frescas de ingredientes y en precio. Si todo esto no fuera suficiente, los dueños un amor, una pareja super amable, da gusto comprarles la verdad. Todas las semanas compro y nunca fallan. Recomiendo.",
+      "foto": null
+    },
+    {
+      "autor": "Martin YU",
+      "estrellas": 5,
+      "fecha": "2025-12",
+      "texto": "Las mejores empanadas fritas y canastas super originales. Te atienden con mucha amabilidad y despachan rapido. A mi criterio son de los mejores de toda zona norte, ¡Felicitaciones!",
+      "foto": null
+    },
+    {
+      "autor": "Fernando Garcia",
+      "estrellas": 5,
+      "fecha": "2025-12",
+      "texto": "De las mejores empanadas de la zona, muy ricas y grandes, tienen la opción de cocción fritas o al horno, cosa que no todos los lugares tienen y eso suma un punto. Recomendadas.",
+      "foto": null
+    }
+  ]
+}

@@ -128,7 +128,7 @@ node tools/menu.cjs revisar  # avisa si index.html quedó desfasado de menu.json
 | Gustos (agregar, borrar, renombrar) | `data/menu.json` + `node tools/menu.cjs generar`. `buscar` es lo que usa el buscador del sitio: incluye las variantes sin tilde |
 | Teléfonos | `index.html`, buscar `tel:` — están en header, hero, ubicación, delivery, footer y barra mobile |
 | Horarios | dos lugares: la lista `.hours-list` en `index.html` **y** `SCHEDULE` en `assets/js/main.js` (el cartel "abierto ahora" sale de ahí) |
-| Reseñas | `index.html`, `.reviews-track`. Están escritas a mano, tomadas del widget de Google del sitio viejo |
+| Reseñas | `data/resenas.json` + `node tools/resenas.cjs generar` (también el puntaje y el total, en la sección y en el JSON-LD). Se copian a mano de la ficha de Maps; fecha como `AAAA-MM`. Fotos en `assets/img/resenas/` (96×96 JPEG); sin foto van las iniciales |
 | Dirección | `index.html`, sección `#ubicacion` (texto, link de "Cómo llegar" e `iframe` del mapa) |
 
 ## Diferencias con el sitio de WordPress
