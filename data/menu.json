@@ -1,6 +1,6 @@
 {
   "_comentario": "Fuente de verdad de los precios. Lo edita el panel /admin, que después regenera el bloque del menú dentro de index.html. No editar el HTML a mano.",
-  "actualizado": "2026-09-20",
+  "actualizado": "2026-10-07",
   "grupos": [
     {
       "id": "empanadas",
@@ -204,13 +204,6 @@
           "buscar": "esparragos espárragos queso reggianito"
         },
         {
-          "id": "repollitos-de-bruselas",
-          "nombre": "Repollitos de Bruselas",
-          "desc": "Repollitos de bruselas y queso parmesano",
-          "precio": 3900,
-          "buscar": "repollitos de bruselas queso parmesano"
-        },
-        {
           "id": "alemana",
           "nombre": "Alemana",
           "desc": "Salchicha alemana, cebolla y mostaza relish",
@@ -224,6 +217,14 @@
           "desc": "Pepperoni, cebolla, tomate y morrón verde",
           "precio": 3900,
           "buscar": "pepperoni peperoni cebolla tomate morron morrón verde",
+          "nueva": true
+        },
+        {
+          "id": "del-mar",
+          "nombre": "Del Mar",
+          "desc": "Langostinos y pimentón español",
+          "precio": 3900,
+          "buscar": "del mar langostinos pimenton pimentón español espanol mariscos",
           "nueva": true
         }
       ]
