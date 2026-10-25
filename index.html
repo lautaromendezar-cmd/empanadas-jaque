@@ -34,6 +34,42 @@
   document.documentElement.className += ' js';
 </script>
 
+<script>
+  /* GA4. gtag.js (~150 KB) se baja con la primera interacción o 3,5 s después del load,
+     para no frenar el LCP. Lo que pase antes queda en dataLayer y sale al cargar. */
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-RFJ0ZRKWQC');
+  (function () {
+    var hecho = false, evs = ['pointerdown', 'touchstart', 'keydown', 'scroll'];
+    function cargar() {
+      if (hecho) return;
+      hecho = true;
+      evs.forEach(function (e) { removeEventListener(e, cargar); });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RFJ0ZRKWQC';
+      document.head.appendChild(s);
+    }
+    evs.forEach(function (e) { addEventListener(e, cargar, { once: true, passive: true }); });
+    addEventListener('load', function () { setTimeout(cargar, 3500); });
+
+    /* Conversiones: llamar para pedir (no hay WhatsApp; el listener lo cubre si algún día lo hay). */
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href'), sec = a.closest('#action-bar, nav, section[id], .site-header, .site-footer');
+      var ubicacion = sec ? (sec.id || sec.tagName.toLowerCase()) : 'otro';
+      if (href.indexOf('tel:') === 0) {
+        gtag('event', 'click_telefono', { telefono: href.slice(4), ubicacion: ubicacion });
+      } else if (/wa\.me|whatsapp\.com/.test(href)) {
+        gtag('event', 'click_whatsapp', { ubicacion: ubicacion });
+      }
+    }, true);
+  })();
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
